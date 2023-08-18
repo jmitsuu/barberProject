@@ -1,39 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
 import App from "../App.vue"
-import Barber from "../views/Barber.vue"
+import Calendar from "../views/Calendar.vue"
 import About from "../views/About.vue"
-// const routes =[
-
-
-// {
-//   path:"/Barber",
-//   name:"Barber",
-//   compoment: Barber,
-// },
-// {
-//   path:"/About",
-//   name:"About",
-//   compoment: About,
-// }
-// ];
-// const router = createRouter({
-//   routes,
-//   linkExactActiveClass: "active",
-//   history: createWebHistory(),
-// });
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "Barber",
-      component: Barber,
+      name: "About",
+      component: About,
     },
     {
-      path: "/Barber",
-      name: "Barber",
-      component: Barber,
+      path: "/Calendar",
+      name: "Calendar",
+      component: Calendar,
     },
     {
       path: "/About",

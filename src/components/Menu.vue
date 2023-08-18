@@ -1,21 +1,23 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import Profile from "./Profile.vue";
 
 const menuItems = ref([
-
-  {
-
-    route: "Barber",
-    title: "Barbeiro",
-
-  },
-  {
+{
   
-    route: "About",
-    title: "About",
+  route: "About",
+  title: "Sobre",
+
+},
+
+  {
+
+    route: "Calendar",
+    title: "Agenda",
 
   },
+ 
 
 ]);
 </script>
@@ -25,8 +27,9 @@ const menuItems = ref([
 
 <section class="flex">
   <nav
-    class="bg-gradient-to-b w-60 h-screen bg-slate-200 text-white "
-  >
+    class="bg-gradient-to-b w-60 h-screen bg-slate-600  text-white font-bold "
+  > 
+      <Profile :userName="'Jairo'" :userAcess="'Cliente'"/>
       <li
         v-for="(item) in menuItems"
         :key="item.id"
