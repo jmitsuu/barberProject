@@ -6,12 +6,13 @@ import { useCalendar } from "../store/storeCalendar";
 import axios from "axios";
 const store = useCalendar();
 const modal = ref(false);
-const showMessage = ref(false);
+
 const usersAttendants = ref();
 const attName = ref();
 const attStatus = ref();
 const listen = ref();
 const interval = ref("bg-red-200");
+const hideMessage =ref()
 const attendants = [
   {
     id: 1,
@@ -48,6 +49,10 @@ function getAttendance(idName) {
 function mouseoutModal(){
 modal.value = false
 }
+
+
+ 
+
 onMounted(() => {
   store.menuBarbers();
 });
@@ -107,13 +112,14 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div class="flex gap-12" v-if="showMessage">
+      <div class="flex gap-12" v-if="store.showMessage">
         <h1>
           Prezado cliente, seu agendamento com o <b>{{ attName }}</b> foi
           registrado com sucesso. Lembre-se de chegar com 10 minutos de
           antecedencia
         </h1>
       </div>
+ 
     </div>
     <div>
       <table class="w-full text-left table-fixed p-2 mt-2 rounded-sm">
@@ -133,14 +139,28 @@ onMounted(() => {
             <td>{{ item.hour }}</td>
 
             <td>{{ item.Status }}</td>
-            <td>
+            <td
+        
+            >
               <button
-                class="bg-green-300 p-1 rounded-md hover:bg-green-400 transition-all"
-                @click="store.confirmService(item.Status )"
+              v-if="item.Status != 'Reservado' "
+                class="bg-green-300 p-1 rounded-md hover:bg-green-400 transition-all "
+                @click="store.confirmService(item )"
+              
               >
                 Confirmar
               </button>
+              <button
+               v-else
+                class="bg-red-300 p-1 rounded-md hover:bg-red-400 transition-all"
+                @click="store.cancelService(item )"
+                
+              >
+                Cancelar
+              </button>
+
             </td>
+         
           </tr>
         </tbody>
       </table>
