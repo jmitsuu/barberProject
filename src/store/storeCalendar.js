@@ -1,50 +1,40 @@
 import { defineStore } from "pinia";
+import axios from "axios"
 import { ref, reactive } from "vue";
 export const useCalendar = defineStore("useCalendar", () => {
   const attStatus = ref("Disponivel");
-  const attendancesDay = ref([]);
-  const dataConfirmed = ref();
-  const dates = ref();
-  const name = ref();
-  const hour = ref();
+  const attendancesDay = ref();
+  const usersAttendants = ref()
   const dataBase = ref()
 
-  function getDate(dateDay, attName) {
+ async function menuBarbers(){
+    const {data} = await axios.get("http://localhost:3000/usersAttendants")
+    usersAttendants.value = data
+    console.log(usersAttendants.value)
+  }
+
+  function getCalendar(calendar) {
     const findItem = attendancesDay.value.findIndex(
-      (item) => item.name == attName
+      (item) => item.name == calendar.name
     );
-    if (findItem >= 0) return;
-      
-          console.log(name.value)
-        
+    if (findItem >= 0) return; 
+    attendancesDay.value = calendar.calendar
   
-    for (let a = 8; a < 19; a++) {
-      dates.value = dateDay.replaceAll("-", "/");
-
-      attendancesDay.value.push({
-        date: dates.value,
-        hours: a,
-        name: attName,
-        status: attStatus.value,
-      });
-   localStorage.setItem("setAtts", JSON.stringify(attendancesDay.value));
-   const data = localStorage.getItem("setAtts");
-  dataBase.value = JSON.parse(data)
-   
-    }
   }
-  function confirmDate(date) {
-    // date.status = 'Agendado'
-  const data = localStorage.getItem('setAtts');
-  const change = JSON.parse(data)
-  change.filter(item=>{
-    if(item.hours === date.hours){
-      item.status = 'Agendado'
+   function confirmService(item){
+    const att = item
+    axios.put("http://localhost:3000/usersAttendants" ,
+    {
+      calendar:[
+        {
+          Status:"Reservado"
+        }
+      ]
     }
-  })
-  localStorage.setItem("setAtts", JSON.stringify(change))
-  console.log(date.status)
-
+    
+   )
   }
-  return { getDate, attStatus, confirmDate, attendancesDay, dataBase };
+
+  
+  return { getCalendar, menuBarbers, confirmService, attStatus, attendancesDay,usersAttendants, dataBase, };
 });

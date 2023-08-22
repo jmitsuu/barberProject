@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch server/db.json"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "axios": "^1.4.0",
     "pinia": "^2.1.6",
     "tailwind": "^4.0.0",
     "vue": "^3.3.4",
