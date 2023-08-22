@@ -10,6 +10,7 @@ const usersAttendants = ref()
 const attName = ref()
 const attStatus = ref()
 const listen = ref()
+const interval= ref('bg-red-200')
 const attendants = [
   {
     id: 1,
@@ -30,6 +31,7 @@ const attendants = [
 localStorage.setItem('Attendants', JSON.stringify(attendants));
 const dataAtt = localStorage.getItem('Attendants')
 usersAttendants.value = JSON.parse(dataAtt)
+
 function getAttendance(idName) {
   attName.value = idName
   modal.value = false
@@ -48,7 +50,7 @@ onMounted(()=>{
 </script>
 
 <template >
-  <section class=" w-full bg-bgSite p-4">
+  <section class=" w-full h-screen overflow-y-scroll bg-bgSite p-4">
 
     <div class="p-2 w-full h-[200px] border-2 shadow-md rounded-lg">
       <h1 class="text-gray-600 text-[0.9rem] font-bold flex gap-2 mb-3">
@@ -79,11 +81,9 @@ onMounted(()=>{
               </div>
             </div>
           </div>
-          <button
-            class="bg-green-300 text-lg font-semibold text-gray-600 p-2 rounded-md hover:bg-green-500 transition duration-300"
-            v-if="attName" @click="confirmService">
-            Confirmar
-          </button>
+          <div class="flex items-center text-2xl font-bold text-gray-700">
+            <h1>{{ attName }}</h1>
+          </div>
         </div>
 
       </div>
@@ -92,27 +92,35 @@ onMounted(()=>{
         <h1>Prezado cliente, seu agendamento com o <b>{{ attName }}</b> foi registrado com sucesso. Lembre-se de chegar
           com 10 minutos de antecedencia</h1>
       </div>
+    
     </div>
     <div>
-      <table class=" w-full text-left table-fixed">
+      <table class=" w-full text-left table-fixed p-2 mt-2 rounded-sm">
         <thead>
           <tr class="text-gray-600 text-semibold bg-slate-300">
-            <th>data</th>
+            <!-- <th>data</th> -->
             <th>Horario</th>
-            <th>Atendente</th>
+            <!-- <th>Atendente</th> -->
             <th>Status</th>
+            <th>Agendar</th>
 
           </tr>
         </thead>
         <tbody >
-          <tr class="border-2 text-gray-700 font-bold"
-          v-for="item in store.attendancesDay" :key="item.name"
+          <tr class="border-2 text-gray-700 font-bold "
+          v-for="item in store.dataBase" :key="item.name"
+          :class="item.hours === 12 || item.hours === 13? interval : ''"
           >
-    
-            <td>{{ item.date }}</td>
-            <td v-if="item.hours === 12 || item.hours === 13? item.status = 'Horario de almoço': item.status ">{{ item.hours }}</td>
-            <td>{{ item.name }} </td>
+<!--     
+            <td>{{ item.date }}</td> -->
+            <td v-if="item.hours === 12 || item.hours === 13? item.status = 'Intervalo': item.status ">{{ item.hours }}:00</td>
+            <!-- <td>{{ item.name }} </td> -->
             <td>{{ item.status }}</td>
+            <td>
+              <button 
+              v-if="item.hours != 12 && item.hours != 13"
+              class="bg-green-300 p-1 rounded-md hover:bg-green-400 transition-all" @click="store.confirmDate(item)">Confirmar</button>
+            </td>
           </tr>
 
 

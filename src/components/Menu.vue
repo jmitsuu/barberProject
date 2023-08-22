@@ -27,7 +27,7 @@ const menuItems = ref([
 
 <section class="flex">
   <nav
-    class="bg-gradient-to-b w-60 h-screen bg-slate-600  text-white font-bold "
+    class="bg-gradient-to-b w-60 h-screen bg-slate-600   text-white font-bold "
   > 
       <Profile :userName="'Jairo'" :userAcess="'Cliente'"/>
       <li
