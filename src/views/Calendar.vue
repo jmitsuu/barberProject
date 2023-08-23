@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import { CalendarDaysIcon, ChevronDownIcon } from "@heroicons/vue/24/solid";
 import Input from "../components/input/Input.vue";
 import { useCalendar } from "../store/storeCalendar";
+import Menu from '../components/Menu.vue'
 import axios from "axios";
 const store = useCalendar();
 const modal = ref(false);
@@ -59,12 +60,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="w-full h-screen overflow-y-scroll bg-bgSite p-4">
+  
+
+
+  <section class="w-full  flex justify-center h-screen overflow-y-scroll bg-bgSite ">
+    <Menu/>
+    <div class=" p-4">
+    
     <div class="p-2 w-full h-[200px] border-2 shadow-md rounded-lg">
       <h1 class="text-gray-600 text-[0.9rem] font-bold flex gap-2 mb-3">
         <CalendarDaysIcon class="h-6 w-6 text-blue-500" /> Agendamentos
       </h1>
-      <div class="w-full flex h-20 bg-gray-200 rounded-md">
+      <div class=" flex h-20 bg-gray-200 rounded-md">
         <div class="p-2 flex gap-12">
           <div
             class="relative p-2 flex justify-center items-center bg-slate-100 rounded-md w-[195px]"
@@ -140,7 +147,7 @@ onMounted(() => {
 
             <td>{{ item.Status }}</td>
             <td
-        
+      
             >
               <button
               v-if="item.Status != 'Reservado' "
@@ -160,10 +167,14 @@ onMounted(() => {
               </button>
 
             </td>
-         
+        
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
   </section>
+
+
+
 </template>

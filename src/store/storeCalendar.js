@@ -9,6 +9,7 @@ export const useCalendar = defineStore("useCalendar", () => {
   const idUrl = ref()
   const idName = ref()
   const showMessage = ref(false);
+  const disableButton = ref(true)
  async function menuBarbers(){
     const {data} = await axios.get("http://localhost:3000/usersAttendants")
     usersAttendants.value = data
@@ -27,23 +28,27 @@ export const useCalendar = defineStore("useCalendar", () => {
  
   }
  function confirmService(item){
-    showMessage.value = true
+    showMessage.value = true;
 
-     
+    const findItem = attendancesDay.value.findIndex(
+        (item) => item.name == idName.value
+      );
+      if (findItem >= 0) return; 
   item = {
     hour:item.hour,
     Status:"Reservado"
   }
-
+ 
   attendancesDay.value.filter(repeat =>{
-   
+    if(repeat.hour !== item.hour){
+        repeat.Status = "Disponivel"
+    }
     if(repeat.hour === item.hour)
     {
         repeat.hour = item.hour,
         repeat.Status = item.Status
     }
   })
-  
     axios.put(`http://localhost:3000/usersAttendants/${idUrl.value}`, {
         id:idUrl.value,
         name: idName.value,
@@ -51,6 +56,7 @@ export const useCalendar = defineStore("useCalendar", () => {
         }
         
        )
+     
    menuBarbers()
   }
 
@@ -81,5 +87,5 @@ export const useCalendar = defineStore("useCalendar", () => {
   }
 
   
-  return { getCalendar, menuBarbers, confirmService, cancelService, attStatus, attendancesDay,usersAttendants, dataBase, showMessage };
+  return { getCalendar, menuBarbers, confirmService, cancelService, attStatus, attendancesDay,usersAttendants, dataBase, showMessage, disableButton };
 });

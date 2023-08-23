@@ -1,191 +1,160 @@
 {
-"usersAttendants":[
-{
-  "id":1,
-  "name":"Pedro",
-  "calendar":[ 
+  "usersAttendants": [
     {
-      "Status":"disponivel",
-      "hour":"08:00"
-      
+      "id": 1,
+      "name": "João",
+      "calendar": [
+        {
+          "Status": "Disponivel",
+          "hour": "08:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "09:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "10:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "11:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "13:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "14:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "15:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "16:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "17:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "18:00"
+        }
+      ]
     },
     {
-      "Status":"disponivel",
-      "hour":"09:00"
-      
+      "id": 2,
+      "name": "Maycon",
+      "calendar": [
+        {
+          "Status": "Reservado",
+          "hour": "08:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "09:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "10:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "11:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "13:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "14:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "15:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "16:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "17:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "18:00"
+        }
+      ]
     },
     {
-      "Status":"disponivel",
-      "hour":"10:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"11:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"13:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"14:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"15:00"
-      
+      "id": 3,
+      "name": "Lucas",
+      "calendar": [
+        {
+          "Status": "Disponivel",
+          "hour": "08:00"
+        },
+        {
+          "Status": "Reservado",
+          "hour": "09:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "10:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "11:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "13:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "14:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "15:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "16:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "17:00"
+        },
+        {
+          "Status": "Disponivel",
+          "hour": "18:00"
+        }
+      ]
     }
-    ,
+  ],
+  "panelAttendances": [
     {
-      "Status":"disponivel",
-      "hour":"16:00"
-      
+      "att_name": "",
+      "client_name": "",
+      "date": "",
+      "price": "",
+      "confirmation": ""
     }
-    ,
+  ],
+  "users": [
     {
-      "Status":"disponivel",
-      "hour":"17:00"
-      
+      "name": "Jairo",
+      "email": "teste@gmail.com",
+      "password": 9932,
+      "token":false,
+      "acess_level": 3
     }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"18:00"
-      
-    }
-
-    
   ]
-
-},
-{
-  "id":2,
-  "name":"João",
-  "calendar":[ 
-    {
-      "Status":"disponivel",
-      "hour":"08:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"09:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"10:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"11:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"13:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"14:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"15:00"
-      
-    }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"16:00"
-      
-    }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"17:00"
-      
-    }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"18:00"
-      
-    }
-
-    
-  ]
-
-},
-{
-  "id":3,
-  "name":"Lucas",
-  "calendar":[ 
-    {
-      "Status":"disponivel",
-      "hour":"08:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"09:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"10:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"11:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"13:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"14:00"
-      
-    },
-    {
-      "Status":"disponivel",
-      "hour":"15:00"
-      
-    }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"16:00"
-      
-    }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"17:00"
-      
-    }
-    ,
-    {
-      "Status":"disponivel",
-      "hour":"18:00"
-      
-    }
-
-    
-  ]
-
-}
-
-]
 }
