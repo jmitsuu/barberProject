@@ -13,7 +13,7 @@
           "hour": "09:00"
         },
         {
-          "Status": "Disponivel",
+          "Status": "Reservado",
           "hour": "10:00"
         },
         {
@@ -51,7 +51,7 @@
       "name": "Maycon",
       "calendar": [
         {
-          "Status": "Reservado",
+          "Status": "Disponivel",
           "hour": "08:00"
         },
         {
@@ -87,7 +87,7 @@
           "hour": "17:00"
         },
         {
-          "Status": "Disponivel",
+          "Status": "Reservado",
           "hour": "18:00"
         }
       ]
@@ -97,11 +97,11 @@
       "name": "Lucas",
       "calendar": [
         {
-          "Status": "Disponivel",
+          "Status": "Reservado",
           "hour": "08:00"
         },
         {
-          "Status": "Reservado",
+          "Status": "Disponivel",
           "hour": "09:00"
         },
         {
@@ -141,20 +141,78 @@
   ],
   "panelAttendances": [
     {
-      "att_name": "",
-      "client_name": "",
-      "date": "",
-      "price": "",
-      "confirmation": ""
+      "data": [
+        {
+          "att_name": "João",
+          "client_name": "Pedro",
+          "date": "2023-08-24 10:00",
+          "price": "-",
+          "confirmation": "-"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "data": [
+        {
+          "att_name": "Lucas",
+          "client_name": "Pedro",
+          "date": "2023-08-25 14:00",
+          "price": "-",
+          "confirmation": "-"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "data": [
+        {
+          "att_name": "Maycon",
+          "client_name": "Pedro",
+          "date": "2023-08-25 18:00",
+          "price": "-",
+          "confirmation": "-"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "data": [
+        {
+          "att_name": "Lucas",
+          "client_name": "Jairo",
+          "date": "2023-08-31 08:00",
+          "price": "-",
+          "confirmation": "-"
+        }
+      ],
+      "id": 5
     }
   ],
   "users": [
     {
+      "id": 1,
       "name": "Jairo",
       "email": "teste@gmail.com",
       "password": 9932,
       "acess_level": 3,
-      "token":"true"
+      "token": "true"
+    },
+    {
+      "name": "Maycon",
+      "email": "teste2@gmail.com",
+      "password": "123",
+      "acess_level": 2,
+      "token": "true",
+      "id": 2
+    },
+    {
+      "name": "Pedro",
+      "email": "teste3@gmail.com",
+      "password": "9932",
+      "acess_level": 1,
+      "token": "true",
+      "id": 3
     }
   ]
 }

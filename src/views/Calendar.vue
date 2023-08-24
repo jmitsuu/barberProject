@@ -3,15 +3,17 @@ import { ref, onMounted } from "vue";
 import { CalendarDaysIcon, ChevronDownIcon } from "@heroicons/vue/24/solid";
 import Input from "../components/input/Input.vue";
 import { useCalendar } from "../store/storeCalendar";
+import {usePanel} from "../store/storePanel"
 import Menu from '../components/Menu.vue'
 import axios from "axios";
 const store = useCalendar();
+const storePanel = usePanel()
 const modal = ref(false);
 
 const usersAttendants = ref();
 const attName = ref();
-const attStatus = ref();
 const listen = ref();
+const getDate = ref();
 const interval = ref("bg-red-200");
 const hideMessage =ref()
 const attendants = [
@@ -43,6 +45,7 @@ function getAttendance(idName) {
     store.usersAttendants.filter((item) => {
       if (idName === item.name) {
         store.getCalendar(item);
+    
       }
     });
   }
@@ -152,7 +155,7 @@ onMounted(() => {
               <button
               v-if="item.Status != 'Reservado' "
                 class="bg-green-300 p-1 rounded-md hover:bg-green-400 transition-all "
-                @click="store.confirmService(item )"
+                @click="store.confirmService(item, attName, listen )"
               
               >
                 Confirmar

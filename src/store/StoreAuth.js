@@ -4,11 +4,12 @@ import { ref, reactive } from "vue";
 const tokenAuth = ref();
 const idCred = ref()
 const generatorId = ref(Math.random() * (10000 - 30) + 30)
+const permission = ref()
 export const useAuth = defineStore("useAuth", () => {
 
   function getAuth(token) {
-
-
+ 
+    console.log(   permission.value)
     if(token && generatorId.value ){
       window.location.href="/Calendar"
       localStorage.setItem("credentials", token)
@@ -22,14 +23,16 @@ export const useAuth = defineStore("useAuth", () => {
 
   }
   function credentials(token){
-  if(generatorId.value){
-    window.location.href="/Calendar"
-    localStorage.setItem("credentials", token)
-  }
+    const data1 = localStorage.getItem("userName")
+    const data2 = JSON.parse(data1)
+    if(data2.level === 3){
+      permission.value = true
+    }
+   
   }
 
 
 
   
-  return {getAuth, tokenAuth, idCred, generatorId };
+  return {getAuth, credentials, tokenAuth, idCred, generatorId, permission };
 });

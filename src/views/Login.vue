@@ -1,7 +1,8 @@
 <script setup>
 import {ref} from "vue";
 import axios from "axios";
-import {useAuth} from "../store/StoreAuth"
+import {useAuth} from "../store/StoreAuth";
+import { RouterLink, RouterView } from "vue-router";
 const userEmail = ref();
 const userPassword= ref();
 const store = useAuth()
@@ -13,6 +14,7 @@ data.filter(item =>{
 
   if(item.email == userEmail.value && item.password == userPassword.value){
     store.getAuth(item.token)
+    localStorage.setItem("userName", JSON.stringify({name:item.name, level:item.acess_level}))
   }
 
 })
@@ -35,8 +37,15 @@ data.filter(item =>{
           <input type="password"  class="outline-none pl-1 w-full h-full mt-2" v-model="userPassword" />
         </div>
         <br />
-        <button class=" border-2 px-4 py-1 rounded-md bg-slate-200 hover:bg-slate-300 transition-all"
+        <button class=" w-full border-2 px-4 py-1 rounded-md bg-slate-200 font-bold text-2xl hover:bg-slate-300 transition-all"
           @click="login">Entrar</button>
+          <RouterLink to="/Register">
+
+         
+          <div class="text-center text-[1.1rem] mt-9  rouynded-md text-gray-500 cursor-pointer p-2 hover:border-b-2"
+          
+          >Criar Usuario</div>
+        </RouterLink>
       </fieldset>
     </section>
 </template>
