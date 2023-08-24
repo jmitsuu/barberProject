@@ -3,7 +3,7 @@ import Menu from '../components/Menu.vue'
 </script>
 <template>
   <Menu/>
-<section class="w-full  bg-gray-200">
+<section class="w-full h-screen  bg-gray-200">
 
 
 <div class="flex justify-center">

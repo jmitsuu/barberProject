@@ -1,10 +1,10 @@
 <script setup>
 import {ref} from "vue";
 import axios from "axios";
-
+import {useAuth} from "../store/StoreAuth"
 const userEmail = ref();
 const userPassword= ref();
-const token = ref(false);
+const store = useAuth()
 
 async function login(){
 const {data} = await axios.get( `http://localhost:3000/users/`);
@@ -12,9 +12,7 @@ const {data} = await axios.get( `http://localhost:3000/users/`);
 data.filter(item =>{
 
   if(item.email == userEmail.value && item.password == userPassword.value){
-    item.token = true,
-    localStorage.setItem('token', token.value)
-    window.location.href="/Calendar"
+    store.getAuth(item.token)
   }
 
 })

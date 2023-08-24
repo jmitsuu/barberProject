@@ -153,8 +153,8 @@
       "name": "Jairo",
       "email": "teste@gmail.com",
       "password": 9932,
-      "token":false,
-      "acess_level": 3
+      "acess_level": 3,
+      "token":"true"
     }
   ]
 }

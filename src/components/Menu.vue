@@ -19,7 +19,7 @@ const menuItems = ref([
   },
   {
 
-    route: "Painel",
+    route: "Panel",
     title: "Painel",
 
   },
