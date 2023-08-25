@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
 import axios from "axios";
 import {useAuth} from "../store/StoreAuth";
 import { RouterLink, RouterView } from "vue-router";
@@ -19,6 +19,7 @@ data.filter(item =>{
 
 })
 }
+
 </script>
 
 <template>

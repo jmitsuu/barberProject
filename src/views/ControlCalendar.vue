@@ -53,7 +53,7 @@ store.credentials()
         <Menu />
         <div class="w-full" >
 
-            <div class="text-[3.2rem] text-gray-400" v-if="store.permission">Painel de Agendamentos</div>
+            <div class="text-[3.2rem] text-gray-600 text-center" v-if="store.permission">Painel de Agendamentos</div>
 
 
             <div class=" p-4" v-if="store.permission">
@@ -80,7 +80,7 @@ store.credentials()
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-2 border-blue-500 text-gray-700 font-bold text-center bg-blue-100 cursor-pointer hover:bg-blue-300 transition-all"
+                        <tr class="border-2 border-gray-300 text-gray-700 font-bold text-center bg-blue-100 cursor-pointer hover:bg-blue-300 transition-all"
                         v-for="(item, index) of dataClients"
                         :key="index.id"
                         >

@@ -12,9 +12,11 @@ export const useCalendar = defineStore("useCalendar", () => {
   const clientName = ref()
   const showMessage = ref(false);
   const disableButton = ref(true);
+  const waitDocument = ref(false)
   async function menuBarbers() {
     const { data } = await axios.get("http://localhost:3000/usersAttendants");
     usersAttendants.value = data;
+    waitDocument.value = true
   }
 
   function getCalendar(calendar) {
@@ -108,5 +110,6 @@ export const useCalendar = defineStore("useCalendar", () => {
     dataBase,
     showMessage,
     disableButton,
+    waitDocument
   };
 });

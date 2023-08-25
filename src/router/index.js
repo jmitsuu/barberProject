@@ -12,12 +12,12 @@ const router = createRouter({
 
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: "/",
-      name: "About",
-      component: About,
-      meta: { requiresAuth: true },
-    },
+    // {
+    //   path: "/",
+    //   name: "About",
+    //   component: About,
+    //   meta: { requiresAuth: true },
+    // },
     {
       path: "/Calendar",
       name: "Calendar",
@@ -64,9 +64,9 @@ const router = createRouter({
 
 router.beforeEach((to, from, next)=>{
   const data1 = localStorage.getItem("userName")
-  const data2 = JSON.parse(data1)
-  const permission = data2.level
-  console.log(permission)
+
+
+
   const tokenAuth = localStorage.getItem("credentials");
 
   const isAuth = to.matched.some((record)=> record.meta.requiresAuth);
