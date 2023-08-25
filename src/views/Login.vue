@@ -8,7 +8,7 @@ const userPassword= ref();
 const store = useAuth()
 
 async function login(){
-const {data} = await axios.get( `http://localhost:3000/users/`);
+const {data} = await axios.get( `https://barber-api-lovat.vercel.app/users/`);
 
 data.filter(item =>{
 

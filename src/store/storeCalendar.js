@@ -14,7 +14,7 @@ export const useCalendar = defineStore("useCalendar", () => {
   const disableButton = ref(true);
   const waitDocument = ref(false)
   async function menuBarbers() {
-    const { data } = await axios.get("http://localhost:3000/usersAttendants");
+    const { data } = await axios.get("https://barber-api-lovat.vercel.app/usersAttendants");
     usersAttendants.value = data;
     waitDocument.value = true
   }
@@ -54,13 +54,13 @@ export const useCalendar = defineStore("useCalendar", () => {
         (repeat.hour = item.hour), (repeat.Status = item.Status);
       }
     });
-    axios.put(`http://localhost:3000/usersAttendants/${idUrl.value}`, {
+    axios.put(`https://barber-api-lovat.vercel.app/usersAttendants/${idUrl.value}`, {
       id: idUrl.value,
       name: idName.value,
       calendar: attendancesDay.value,
     });
     axios.post(
-      "http://localhost:3000/panelAttendances/",
+      "https://barber-api-lovat.vercel.app/panelAttendances/",
 
       {
         data: [
@@ -91,7 +91,7 @@ export const useCalendar = defineStore("useCalendar", () => {
       }
     });
 
-    axios.put(`http://localhost:3000/usersAttendants/${idUrl.value}`, {
+    axios.put(`https://barber-api-lovat.vercel.app/usersAttendants/${idUrl.value}`, {
       id: idUrl.value,
       name: idName.value,
       calendar: attendancesDay.value,

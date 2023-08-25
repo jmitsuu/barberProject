@@ -25,7 +25,7 @@ const tableHead = [
 ]
 onMounted(()=>{
  async function getClients(){
-    const {data} = await axios.get("http://localhost:3000/panelAttendances");
+    const {data} = await axios.get("https://barber-api-lovat.vercel.app/panelAttendances");
     data.filter(item=>{
        item.data.forEach(el =>{
         dataClients.value.push({

@@ -11,9 +11,9 @@ const userCreated = ref(false)
 
 
 async function register(){
-  const {data} = await axios.get( `http://localhost:3000/users/`);
+  const {data} = await axios.get( `https://barber-api-lovat.vercel.app/users/`);
   data.filter(item=> item.email !== userEmail.value)
-    axios.post( `http://localhost:3000/users/`,{
+    axios.post( `https://barber-api-lovat.vercel.app/users/`,{
     name: userName.value,
     email: userEmail.value,
     password: userPassword.value,
