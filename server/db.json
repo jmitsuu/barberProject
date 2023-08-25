@@ -13,7 +13,7 @@
           "hour": "09:00"
         },
         {
-          "Status": "Reservado",
+          "Status": "Disponivel",
           "hour": "10:00"
         },
         {
@@ -37,7 +37,7 @@
           "hour": "16:00"
         },
         {
-          "Status": "Disponivel",
+          "Status": "Reservado",
           "hour": "17:00"
         },
         {
@@ -51,7 +51,7 @@
       "name": "Maycon",
       "calendar": [
         {
-          "Status": "Disponivel",
+          "Status": "Reservado",
           "hour": "08:00"
         },
         {
@@ -87,7 +87,7 @@
           "hour": "17:00"
         },
         {
-          "Status": "Reservado",
+          "Status": "Disponivel",
           "hour": "18:00"
         }
       ]
@@ -143,42 +143,6 @@
     {
       "data": [
         {
-          "att_name": "João",
-          "client_name": "Pedro",
-          "date": "2023-08-24 10:00",
-          "price": "-",
-          "confirmation": "-"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "data": [
-        {
-          "att_name": "Lucas",
-          "client_name": "Pedro",
-          "date": "2023-08-25 14:00",
-          "price": "-",
-          "confirmation": "-"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "data": [
-        {
-          "att_name": "Maycon",
-          "client_name": "Pedro",
-          "date": "2023-08-25 18:00",
-          "price": "-",
-          "confirmation": "-"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "data": [
-        {
           "att_name": "Lucas",
           "client_name": "Jairo",
           "date": "2023-08-31 08:00",
@@ -187,6 +151,30 @@
         }
       ],
       "id": 5
+    },
+    {
+      "data": [
+        {
+          "att_name": "Maycon",
+          "client_name": "Hamilton",
+          "date": "2023-09-01 08:00",
+          "price": "-",
+          "confirmation": "-"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "data": [
+        {
+          "att_name": "João",
+          "client_name": "Jabes",
+          "date": "2023-09-07 17:00",
+          "price": "-",
+          "confirmation": "-"
+        }
+      ],
+      "id": 7
     }
   ],
   "users": [
@@ -213,6 +201,30 @@
       "acess_level": 1,
       "token": "true",
       "id": 3
+    },
+    {
+      "name": "Hamilton",
+      "email": "teste4@gmail.com",
+      "password": "9932",
+      "acess_level": 1,
+      "token": "true",
+      "id": 4
+    },
+    {
+      "name": "Witsuu",
+      "email": "teste3@gmail.com",
+      "password": "9932",
+      "acess_level": 1,
+      "token": "true",
+      "id": 5
+    },
+    {
+      "name": "Jabes",
+      "email": "teste9@gmail.com",
+      "password": "9932",
+      "acess_level": 1,
+      "token": "true",
+      "id": 6
     }
   ]
 }

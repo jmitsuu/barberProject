@@ -16,6 +16,7 @@ const listen = ref();
 const getDate = ref();
 const interval = ref("bg-red-200");
 const hideMessage =ref()
+const  styleComponent = ref(false)
 const attendants = [
   {
     id: 1,
@@ -59,6 +60,9 @@ modal.value = false
 
 onMounted(() => {
   store.menuBarbers();
+  setTimeout(()=>{
+  styleComponent.value = true
+}, 400)
 });
 </script>
 
@@ -66,12 +70,12 @@ onMounted(() => {
   
 
 
-  <section class="w-full  flex justify-center h-screen overflow-y-scroll bg-bgSite ">
+  <section class="w-full  flex justify-center h-screen overflow-y-scroll bg-bgSite " >
     <Menu/>
     <div class=" p-4">
     
     <div class="p-2 w-full h-[200px] border-2 shadow-md rounded-lg">
-      <h1 class="text-gray-600 text-[0.9rem] font-bold flex gap-2 mb-3">
+      <h1 class="text-gray-600 text-[0.9rem] font-bold flex gap-2 mb-3" v-if="styleComponent">
         <CalendarDaysIcon class="h-6 w-6 text-blue-500" /> Agendamentos
       </h1>
       <div class=" flex h-20 bg-gray-200 rounded-md">
@@ -98,7 +102,7 @@ onMounted(() => {
             >
               <h1 v-if="!attName">Selecione</h1>
               <h1 class="text-gray-500 font-bold" v-else>{{ attName }}</h1>
-              <ChevronDownIcon class="w-4 h-4 absolute right-0" />
+              <ChevronDownIcon v-if="styleComponent" class="w-4 h-4 absolute right-0" />
             </div>
             <div
               v-if="modal"

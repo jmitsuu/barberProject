@@ -9,18 +9,21 @@ const userPassword= ref();
 const store = useAuth()
 const userCreated = ref(false)
 
-function register(){
- axios.post( `http://localhost:3000/users/`,{
-    
-      name: userName.value,
-      email: userEmail.value,
-      password: userPassword.value,
-      acess_level: 1,
-      token: "true"
-    
-   
+
+async function register(){
+  const {data} = await axios.get( `http://localhost:3000/users/`);
+  data.filter(item=> item.email !== userEmail.value)
+    axios.post( `http://localhost:3000/users/`,{
+    name: userName.value,
+    email: userEmail.value,
+    password: userPassword.value,
+    acess_level: 1,
+    token: "true"
+  
+ 
 });
 goToLogin()
+
 }
 function goToLogin(){
   
